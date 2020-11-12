@@ -4,6 +4,8 @@ import {makeStyles} from '@material-ui/core/styles';
 import styled from 'styled-components';
 import db from './firebase';
 import DeleteIcon from '@material-ui/icons/Delete';
+// import Moment from 'react-moment';
+// import 'moment-timezone';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -31,6 +33,7 @@ function Todo(props) {
      }, {merge: true});
      setOpen(false);
    }
+
     return (
         <DIV>
             <Modal open={open}
@@ -50,7 +53,11 @@ function Todo(props) {
                 <ListItem >
                     <ListItemAvatar>
                     </ListItemAvatar>
-                    <ListItemText primary={props.todo.todo} secondary="Deadline -  ⏰" />
+                    <ListItemText primary={props.todo.todo} 
+                                  secondary="Created - 12/11/20 Thursday"/>
+                                  <h5 style={{color:"gray", marginTop: "20px"}}
+                                  >Deadline - 13/11/20 ⏰</h5>
+                                  
                 </ListItem>
                 <Button onClick={e => setOpen(true)}>EDIT</Button>
                 <DeleteIcon style={{cursor: 'pointer', marginBottom: "-10px"}} onClick={event => db.collection('todos').doc(props.todo.id).delete()} /> 
