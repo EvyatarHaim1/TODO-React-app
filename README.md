@@ -7,3 +7,6 @@ TODO-APP
 * styled-Components
 * Material-UI
 * Firebase - Hosting the app
+
+![alt text](https://github.com/EvyatarHaim1/TODO-React-app/blob/main/src/ScreenView.png)
+
